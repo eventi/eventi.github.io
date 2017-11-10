@@ -2,7 +2,8 @@
 layout: post
 title:  "Some things about ctags"
 date:   2017-11-09 21:03:47
-categories: ctags programming vim TIL draft
+categories: programming TIL
+tags: vim git ctags
 published: true
 ---
 [Installing & using ctags in Vim][1]
@@ -40,9 +41,9 @@ then in `post-commit`,`post-checkout`,and `post-merge` you have:
     #!/bin/sh
     .git/hooks/ctags >/dev/null 2>&1 &
 
-make them all executable and Bob's your uncle, which in England means that your ctags will be updated wheneever you commit, checkout or merge.  Actually Tim puts it all in a template dir and `git init`s in his repo to install it which is smarter, but you get the idea. Read his post.
+make them all executable and Bob's your uncle, which in England means that your ctags will be updated wheneever you commit, checkout or merge.  Actually Tim puts it all in a template dir and `git init`s in his repo to install it which is smarter, but you get the idea. Read [his post][3].
 
 [1]: https://andrew.stwrt.ca/posts/vim-ctags/
 [2]: http://tpo.pe
-[3]: tktkt
-
+[3]: http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html
+ 
