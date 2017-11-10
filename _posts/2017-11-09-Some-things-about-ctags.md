@@ -5,19 +5,16 @@ date:   2017-11-09 21:03:47
 categories: ctags programming vim TIL draft
 published: true
 ---
-
 [Installing & using ctags in Vim][1]
 ===========
 
 *TL;DR:*
 
-{% highlight bash %}
     brew install ctags
     cd project root
     ctags -R .
     # or if you want to keep the tags file out of site
     ctags -R -f .git/tags .
-{% endhighlight %}
 
 then edit a file, put your cursor on an identifier and hit `<Ctrl>-]` to see it's definition.  Hit `<Ctrl>-t` to return to where you started.
 
@@ -29,7 +26,6 @@ by the always amazing [Tim Pope][2]
 
 in `.git/hooks/ctags`:
 
-{% highlight bash %}
     #!/bin/sh
     set -e
     PATH="/usr/local/bin:$PATH"
@@ -38,7 +34,6 @@ in `.git/hooks/ctags`:
     git ls-files | \
       ctags --tag-relative -L - -f"$dir/$$.tags" --languages=-javascript,sql
     mv "$dir/$$.tags" "$dir/tags"
-{% endhighlight %}
 
 then in `post-commit`,`post-checkout`,and `post-merge` you have:
 
