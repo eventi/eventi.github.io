@@ -3,7 +3,7 @@ targetfile=_drafts/$(echo $* | sed -e "s/ /-/g").md
 cat <<EOF > $targetfile
 ---
 layout: post
-title:  "$*"
+title:  "DRAFT - $*"
 categories: draft
 ---
 
