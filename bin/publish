@@ -1,0 +1,11 @@
+#!/bin/sh
+
+for draft in $* ; do
+    if [ -e "$draft" ] ; then
+        mv $1 _posts/$(date +"%Y-%m-%d")-$(basename $1)
+    else
+        echo "$draft not found"
+        exit 1
+    fi
+done
+
