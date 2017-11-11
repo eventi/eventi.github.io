@@ -1,1 +1,15 @@
-../bin/draft
+#!/bin/bash
+targetfile=_drafts/$(echo $* | sed -e "s/ /-/g").md
+if [ ! -e $targetfile ] ; then
+cat <<EOF > $targetfile
+---
+layout: post
+title:  "DRAFT - $*"
+categories: tk
+---
+
+$*
+
+EOF
+fi
+vim $targetfile
