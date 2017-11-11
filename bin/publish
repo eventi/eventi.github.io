@@ -2,9 +2,16 @@
 
 for draft in $* ; do
     if [ -e "$draft" ] ; then
+        if cat $draft | grep -i tk >/dev/null ; then
+            echo "Error: $draft contains tk placeholders"
+            exit 2
+        fi
+        if cat $draft | egrep 'published:.*false' >/dev/null ; then
+            echo "Warning: $draft contains published: false in front matter"
+        fi
         mv $1 _posts/$(date +"%Y-%m-%d")-$(basename $1)
     else
-        echo "$draft not found"
+        echo "Error: $draft not found"
         exit 1
     fi
 done
