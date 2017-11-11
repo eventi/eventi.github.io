@@ -2,9 +2,9 @@
 layout: post
 title:  "Some things about ctags"
 date:   2017-11-09 21:03:47
-categories: programming TIL
-tags: vim git ctags
-published: true
+categories: programming
+tags: vim git ctags TIL
+
 ---
 [Installing & using ctags in Vim][1]
 ===========

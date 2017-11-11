@@ -3,8 +3,7 @@ layout: post
 title:  "Here's a picture of my dog"
 date:   2017-11-09 22:51:12
 categories:
-  - draft
-  - dog
+  - personal
 ---
 
 Here's a picture of my dog

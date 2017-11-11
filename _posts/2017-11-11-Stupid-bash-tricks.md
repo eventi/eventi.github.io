@@ -2,9 +2,9 @@
 layout: post
 title:  "Stupid bash tricks"
 date: 2017-11-11 00:22
-categories:
-  - bash
-  - tips
+categories: programming
+tags: bash tips TIL
+
 ---
 
 Stupid bash tricks
