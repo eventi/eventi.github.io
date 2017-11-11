@@ -9,7 +9,11 @@ for draft in $* ; do
         if cat $draft | egrep 'published:.*false' >/dev/null ; then
             echo "Warning: $draft contains published: false in front matter"
         fi
-        mv $1 _posts/$(date +"%Y-%m-%d")-$(basename $1)
+        if [ -e _posts/$(date +"%Y-%m-%d")-$(basename $1) ] ; then
+            echo "Error: _posts/$(date +"%Y-%m-%d")-$(basename $1) already exists"
+        else
+            mv $1 _posts/$(date +"%Y-%m-%d")-$(basename $1)
+        fi
     else
         echo "Error: $draft not found"
         exit 1

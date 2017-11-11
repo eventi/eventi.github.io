@@ -1,4 +1,6 @@
 #!/bin/bash
-lastlink=$(cat _drafts/miscellaneous.md | grep '^\[' | cut -d\] -f1 | sed 's/^\[//' | sort -nr | head -1)
+if [ -e _drafts/miscellaneous.md ] ; then
+  lastlink=$(cat _drafts/miscellaneous.md | grep '^\[' | cut -d\] -f1 | sed 's/^\[//' | sort -nr | head -1)
+fi
 nextlink=$(( $lastlink + 1 ))
 echo "[$nextlink]: $1" >> _drafts/miscellaneous.md
